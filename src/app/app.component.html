@@ -15,15 +15,15 @@
 
     <div class="container h-100">
         <div class="row">
-            <p-dataView [value]="datas" [paginator]="true" [rows]="3" filterBy="name" layout="grid">
+            <p-dataView [value]="datas" [paginator]="true" [rows]="9" filterBy="name" layout="grid">
                 <ng-template let-data pTemplate="gridItem">
 
 
                     <div class="col-12 col-lg-4">
                         <div class="product-grid-item card">
                             <div class="product-grid-item-content">
-                                <div class="product-name">{{data.date}}</div>
-                                <div class="product-description">{{data.name}}</div>
+                                <h5 class="">{{data.date}}</h5>
+                                <h5 class="">{{data.name}}</h5>
                                 <h5 class="">
                                     <span *ngIf="data.name === 'name1' || data.name === 'name3'" class="text-info">{{data.hours}}</span>
                                     <span *ngIf="data.name === 'name2'" class="text-warning">Save your Score</span>
