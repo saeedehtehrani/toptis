@@ -15,8 +15,62 @@
 
     <div class="container h-100">
         <div class="row">
+            <p-dataView [value]="datas" [paginator]="true" [rows]="3" filterBy="name" layout="grid">
+                <ng-template let-data pTemplate="gridItem">
+
+
+                    <div class="col-12 col-lg-4">
+                        <div class="product-grid-item card">
+                            <div class="product-grid-item-content">
+                                <div class="product-name">{{data.date}}</div>
+                                <div class="product-description">{{data.name}}</div>
+                                <h5 class="">
+                                    <span *ngIf="data.name === 'name1' || data.name === 'name3'" class="text-info">{{data.hours}}</span>
+                                    <span *ngIf="data.name === 'name2'" class="text-warning">Save your Score</span>
+                                </h5>
+                            </div>
+                            <div class="product-grid-item-bottom">
+                                <i *ngIf="data.name === 'name1'" class="fa fa-check fa-2x text-info float-md-end"></i>
+                                <button *ngIf="data.name === 'name2'" class="float-md-end" pButton type="button" label="+"></button>
+                                <i *ngIf="data.name === 'name3'" class="fa fa-star fa-2x float-md-end"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- <div class="col-12 col-lg-4">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <h5 class="card-title">{{data.date}}</h5>
+                                            <h5 class="card-title">{{data.name}}</h5>
+                                            <h5 class="">
+                                                <span *ngIf="data.name === 'name1' || data.name === 'name3'" class="text-info">{{data.hours}}</span>
+                                                <span *ngIf="data.name === 'name2'" class="text-warning">Save your Score</span>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <h5 class="text-center">
+                                            <i *ngIf="data.name === 'name1'" class="fa fa-check fa-2x text-info float-md-end"></i>
+                                            <button *ngIf="data.name === 'name2'" class="float-md-end" pButton type="button" label="+"></button>
+                                            <i *ngIf="data.name === 'name3'" class="fa fa-star fa-2x float-md-end"></i>
+                                        </h5>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div> -->
+                </ng-template>
+            </p-dataView>
             <!-- First Card -->
-            <div class="col-12 col-lg-4 my-2" *ngFor="let data of datas">
+            <!-- <div class="col-12 col-lg-4 my-2" *ngFor="let data of datas">
                 <div class="card shadow">
                     <div class="card-body">
                         <div class="row align-items-center">
@@ -41,7 +95,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Second Card -->
             <!-- <div class="col-12 col-lg-4 my-2">
                 <div class="card shadow">
